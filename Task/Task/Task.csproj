@@ -41,12 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelFile\IComposite.cs" />
+    <Compile Include="ModelFile\ISimple.cs" />
+    <Compile Include="ModelFile\Marks\AnotherMark.cs" />
+    <Compile Include="ModelFile\Marks\ExternalPunctuationMark.cs" />
+    <Compile Include="ModelFile\Marks\InternalPunctuationMark.cs" />
+    <Compile Include="ModelFile\Marks\PunctuationMark.cs" />
+    <Compile Include="ModelFile\Symbol.cs" />
+    <Compile Include="Reader.cs" />
+    <Compile Include="ModelFile\Marks\IMark.cs" />
+    <Compile Include="ModelFile\Offer.cs" />
+    <Compile Include="ModelFile\Text.cs" />
+    <Compile Include="ModelFile\Word.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

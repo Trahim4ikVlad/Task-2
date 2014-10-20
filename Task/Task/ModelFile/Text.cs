@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task
+namespace Task.ModelFile
 {
-    class Program
+    public class Text:IComposite
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

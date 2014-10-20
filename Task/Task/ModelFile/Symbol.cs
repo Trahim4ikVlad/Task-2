@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task
+namespace Task.ModelFile
 {
-    class Program
+    public class Symbol:ISimple
     {
-        static void Main(string[] args)
-        {
-
-        }
+       public char Value { get; set; }
     }
 }
