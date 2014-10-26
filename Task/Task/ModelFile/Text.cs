@@ -13,7 +13,7 @@ namespace Task.ModelFile
 
         public IEnumerator<Sentence> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return _sentens.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -56,10 +56,23 @@ namespace Task.ModelFile
 
         public bool Remove(Sentence item)
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            for (int i = 0; i < _sentens.Count; i++)
+            {
+                Sentence cur = (Sentence)_sentens[i];
+                if (cur.Equals(item))
+                {
+                    _sentens.RemoveAt(i);
+                    result = true;
+                    break;
+                }
+            }
+            return result;
         }
 
         public int Count { get { return _sentens.Count; } }
+
         public bool IsReadOnly { get { return false; } }
     }
 }

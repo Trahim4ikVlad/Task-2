@@ -8,5 +8,6 @@ namespace Task.ModelFile
     public interface ISentenceElement
     {
         string ToString();
+        bool Equals(ISentenceElement obj);
     }
 }

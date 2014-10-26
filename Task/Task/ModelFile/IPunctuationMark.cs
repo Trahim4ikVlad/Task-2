@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task.ModelFile
 {
-    interface IPunctuationMark
+    interface IPunctuationMark:ISentenceElement
     {
         char Value { get; set; }
     }

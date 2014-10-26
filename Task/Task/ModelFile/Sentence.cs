@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,36 +10,22 @@ namespace Task.ModelFile
 {
     public class Sentence : ICollection<ISentenceElement>
     {
+ 
+        private  IList<ISentenceElement> _elements  =  new List<ISentenceElement>();
 
-        private  ICollection<ISentenceElement> _elements  =  new Collection<ISentenceElement>();
+        public string Value { get; set; }
 
         public void Add(ISentenceElement item)
         {
             _elements.Add(item);
         }
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-            {
-                return false;
-            }
-
-            Sentence sentence = obj as Sentence;
-
-            if ((System.Object)sentence == null)
-            {
-                return false;
-            }
-
-            return obj.ToString() == ToString();
-        }
-
         public bool Equals(Sentence obj)
         {
             if (obj == null)
                 return false;
-            return obj.ToString() == this.ToString();
+
+            return obj.Value == this.Value;
         }
 
         public void Clear()
@@ -48,12 +35,25 @@ namespace Task.ModelFile
 
         public bool Contains(ISentenceElement item)
         {
-            throw new NotImplementedException();
+            bool found = false;
+
+            foreach (var e in _elements)
+            {
+                if (e.Equals(item))
+                {
+                    found = true;
+                }
+            }
+
+            return found;
         }
 
         public void CopyTo(ISentenceElement[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _elements.Count; i++)
+            {
+                array[i] =(ISentenceElement) _elements[i];
+            }
         }
 
         public int Count
@@ -73,12 +73,12 @@ namespace Task.ModelFile
 
         public IEnumerator<ISentenceElement> GetEnumerator()
         {
-            throw new NotImplementedException();
+           return _elements.GetEnumerator();
         }
 
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return this.GetEnumerator();
         }
     }
 }

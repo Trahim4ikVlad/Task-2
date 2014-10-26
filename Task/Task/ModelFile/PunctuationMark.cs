@@ -14,5 +14,17 @@ namespace Task.ModelFile
         {
             return Value.ToString();
         }
+
+        public bool Equals(ISentenceElement obj)
+        {
+            if (obj == null)
+                return false;
+
+            PunctuationMark mark = obj as PunctuationMark;
+            if (mark == null)
+                return false;
+
+            return mark.Value == Value;
+        }
     }
 }
