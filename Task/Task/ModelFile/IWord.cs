@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task.ModelFile
 {
-    interface IMark
+    public interface IWord:ISentenceElement
     {
-        char Value { get; set; }
-        bool Contains(char ch);
-        IList<char> GetMarks(); 
+        string Value { get; set; }
+        int Length { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task.ModelFile
 {
-    public class Symbol:ISimple
+    public  class Symbol
     {
        public char Value { get; set; }
     }

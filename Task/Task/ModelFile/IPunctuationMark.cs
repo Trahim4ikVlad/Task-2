@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Task.ModelFile
 {
-    public class Offer : IComposite,ISimple
+    interface IPunctuationMark
     {
+        char Value { get; set; }
     }
+
+
 }
