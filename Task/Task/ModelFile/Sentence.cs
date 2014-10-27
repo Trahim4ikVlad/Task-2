@@ -10,7 +10,6 @@ namespace Task.ModelFile
 {
     public class Sentence : ICollection<ISentenceElement>
     {
- 
         private  IList<ISentenceElement> _elements  =  new List<ISentenceElement>();
 
         public string Value { get; set; }
