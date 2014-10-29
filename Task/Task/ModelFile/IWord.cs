@@ -8,7 +8,8 @@ namespace Task.ModelFile
 {
     public interface IWord:ISentenceElement
     {
-        char[] GetValueChars();
+
         int Length { get; }
+
     }
 }

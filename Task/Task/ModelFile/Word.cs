@@ -20,11 +20,6 @@ namespace Task.ModelFile
             this.Value = value;
         }
 
-        public char[] GetValueChars()
-        {
-            return Value.ToCharArray();
-        }
-
         public override bool Equals(object obj)
         {
             if (obj != null && obj is Word)

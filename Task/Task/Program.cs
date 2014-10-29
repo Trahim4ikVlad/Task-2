@@ -34,17 +34,45 @@ namespace Task
             data = regex.Replace(data, " ");
           
             Text text = new Text(data);
-             
-            foreach (var s in text)
+            /*
+            foreach (var sen in text)
             {
-                foreach (var c in s)
+                foreach (var element in sen)
                 {
-                    if (c is  IPunctuationMark)
-                    {
-                        Console.WriteLine(c);
-                    } 
+                    Console.WriteLine(element.Value);
                 }
             }
+            */
+
+            
+            Console.WriteLine("After sorting:");
+            text.OrderBySentence();
+            
+            foreach (var sen in text)
+            {
+                Console.WriteLine(sen.Value);
+            }
+
+            Console.WriteLine("-------------------------");
+            Console.WriteLine("In all interrogative sentences of the text to find and print without the repetition of words of a given length:");
+
+
+            foreach (var sen in text.InterrogativeSentenceNoRepeat(5))
+            {
+                Console.WriteLine(sen.Value);
+            }
+            text.InterrogativeSentenceNoRepeat(5);
+
+            /*
+            foreach (var sen in text)
+            {
+                foreach (var element in sen)
+                {
+                    Console.WriteLine(element.Value);
+                }
+                   
+                
+            }*/
 
         }
     }

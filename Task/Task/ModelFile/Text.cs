@@ -17,8 +17,10 @@ namespace Task.ModelFile
         public Text(string value)
         {
             this.Value = value;
+
             foreach (var sentence in this.GetSentenceValue())
             {
+                if(sentence.Length>0)
                 Add(new Sentence(sentence));
             }
         }
@@ -29,9 +31,9 @@ namespace Task.ModelFile
         }
 
         //сортировка по количеству слов в предложении
-        public List<Sentence> OrderSentence()
+        public void OrderBySentence()
         {
-            return _sentens.OrderBy(x => x.CountWords()).ToList();
+           _sentens = _sentens.OrderBy(x => x.CountWords()).ToList();
         }
 
         public IEnumerator<Sentence> GetEnumerator()

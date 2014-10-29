@@ -15,11 +15,25 @@ namespace Task.ModelFile
 
         public string Value { get; set; }
 
+        private string GetValue()
+        {
+            string value = "";
+
+            foreach (ISentenceElement element in _elements)
+            {
+                value += element.Value +" ";
+            }
+            Regex regex = new Regex("\\s+");
+
+            value = regex.Replace(value, " ");
+            return value;
+        }
+
+
         public Sentence(string value)
         {
             this.Value = value;
             this.ParseSentence();
-
         }
 
         public override string ToString()
@@ -103,7 +117,19 @@ namespace Task.ModelFile
 
         public bool Remove(ISentenceElement item)
         {
-            return true;
+            bool result = false;
+            for (int i = 0; i < _elements.Count; i++)
+            {
+                ISentenceElement cur = (ISentenceElement)_elements[i];
+
+                if (cur.Equals(item))
+                {
+                    _elements.RemoveAt(i);
+                    result = true;
+                    break;
+                }
+            }
+            return result;
         }
 
         public IEnumerator<ISentenceElement> GetEnumerator()
