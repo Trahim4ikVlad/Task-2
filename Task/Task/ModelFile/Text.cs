@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Task.ModelFile
@@ -10,6 +11,28 @@ namespace Task.ModelFile
     public class Text:ICollection<Sentence>
     {
         private IList<Sentence> _sentens = new List<Sentence>(); 
+
+        public string Value { get; set; }
+
+        public Text(string value)
+        {
+            this.Value = value;
+            foreach (var sentence in this.GetSentenceValue())
+            {
+                Add(new Sentence(sentence));
+            }
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+
+        //сортировка по количеству слов в предложении
+        public List<Sentence> OrderSentence()
+        {
+            return _sentens.OrderBy(x => x.CountWords()).ToList();
+        }
 
         public IEnumerator<Sentence> GetEnumerator()
         {

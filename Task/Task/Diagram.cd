@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Task.ModelFile.PunctuationMark" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ModelFile\PunctuationMark.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Task.ModelFile.Sentence" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABAABABCUgAAABAQQAAAIAAAEAAAgAABQIAA=</HashCode>
+      <FileName>ModelFile\Sentence.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Task.ModelFile.Text" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAgAAABA0AAAABAQAAAAAgAAEAAAgAABQIAA=</HashCode>
+      <FileName>ModelFile\Text.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Task.ModelFile.Word" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAABAAAAAAAAAAAAoAAAAAAA=</HashCode>
+      <FileName>ModelFile\Word.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Task.ModelFile.IPunctuationMark" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ModelFile\IPunctuationMark.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Task.ModelFile.ISentenceElement" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelFile\ISentenceElement.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Task.ModelFile.IWord" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAoAAAAAAA=</HashCode>
+      <FileName>ModelFile\IWord.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

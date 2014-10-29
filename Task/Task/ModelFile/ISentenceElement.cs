@@ -7,7 +7,8 @@ namespace Task.ModelFile
 {
     public interface ISentenceElement
     {
+        string Value { get; set; }
         string ToString();
-        bool Equals(ISentenceElement obj);
+        bool Equals(Object obj);
     }
 }

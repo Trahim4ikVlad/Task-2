@@ -8,7 +8,7 @@ namespace Task.ModelFile
 {
     interface IPunctuationMark:ISentenceElement
     {
-        char Value { get; set; }
+       
     }
 
 

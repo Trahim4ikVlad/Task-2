@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Task.ModelFile
@@ -14,17 +15,52 @@ namespace Task.ModelFile
 
         public string Value { get; set; }
 
+        public Sentence(string value)
+        {
+            this.Value = value;
+            this.ParseSentence();
+
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+     
         public void Add(ISentenceElement item)
         {
             _elements.Add(item);
         }
 
-        public bool Equals(Sentence obj)
+        public int CountWords()
         {
-            if (obj == null)
-                return false;
+            int count = 0;
+            foreach (var element in this)
+            {
+                if (element is IWord)
+                    count++;
+            }
+            return count;
+        }
 
-            return obj.Value == this.Value;
+        public override bool Equals(object obj)
+        {
+            if (obj != null && obj is Sentence)
+            {
+                Sentence sentence = obj as Sentence;
+
+                if (this.ToString() == sentence.ToString())
+                    return true;
+                else
+                    return false;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
         }
 
         public void Clear()

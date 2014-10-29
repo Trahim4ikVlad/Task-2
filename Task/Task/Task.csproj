@@ -41,12 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extension.cs" />
     <Compile Include="ModelFile\IPunctuationMark.cs" />
     <Compile Include="ModelFile\ISentenceElement.cs" />
     <Compile Include="ModelFile\IWord.cs" />
     <Compile Include="ModelFile\PunctuationMark.cs" />
-    <Compile Include="ModelFile\Symbol.cs" />
-    <Compile Include="Reader.cs" />
     <Compile Include="ModelFile\Sentence.cs" />
     <Compile Include="ModelFile\Text.cs" />
     <Compile Include="ModelFile\Word.cs" />
@@ -55,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Diagram.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

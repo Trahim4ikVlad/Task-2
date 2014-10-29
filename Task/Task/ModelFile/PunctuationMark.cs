@@ -8,23 +8,35 @@ namespace Task.ModelFile
 {
     class PunctuationMark:IPunctuationMark
     {
-        public char Value { get; set; }
+        public string Value { get; set; }
 
         public override string ToString()
         {
-            return Value.ToString();
+            return Value;
         }
 
-        public bool Equals(ISentenceElement obj)
+        public PunctuationMark(string value)
         {
-            if (obj == null)
-                return false;
+            this.Value = value;
+        }
 
-            PunctuationMark mark = obj as PunctuationMark;
-            if (mark == null)
-                return false;
+        public override bool Equals(object obj)
+        {
+            if (obj != null && obj is PunctuationMark)
+            {
+                PunctuationMark mark = obj as PunctuationMark;
+                if (this.ToString() == mark.ToString())
+                    return true;
+                else
+                    return false;
+            }
 
-            return mark.Value == Value;
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
         }
     }
 }

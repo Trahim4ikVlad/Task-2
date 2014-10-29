@@ -13,7 +13,11 @@ namespace Task.ModelFile
         public int Length
         {
             get { return Value.Length; }
-            set { value = Value.Length; }
+        }
+
+        public Word(string value)
+        {
+            this.Value = value;
         }
 
         public char[] GetValueChars()
@@ -21,16 +25,23 @@ namespace Task.ModelFile
             return Value.ToCharArray();
         }
 
-        public bool Equals(ISentenceElement obj)
+        public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
+            if (obj != null && obj is Word)
+            {
+                Word word = obj as Word;
+                if (this.ToString() == word.ToString())
+                    return true;
+                else
+                    return false;
+            }
 
-            Word word = obj as Word;
-            if (word == null)
-                return false;
+            return false;
+        }
 
-            return word.Value == Value;
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
         }
 
         public override string ToString()
