@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -99,5 +100,27 @@ namespace Task.ModelFile
         public int Count { get { return _sentens.Count; } }
 
         public bool IsReadOnly { get { return false; } }
+
+        public  void RemoveWordBeginsWithConsonant(int length)
+        {
+            Regex consonant = new Regex("[^aeiou]");
+
+            var words = _sentens.SelectMany(x=>x).
+                Where(x => (x is IWord) && consonant.IsMatch(x.Value[0].ToString()))
+                .Cast<IWord>().Where(x=>x.Length==length).ToList();
+
+            foreach (Sentence sentence in _sentens)
+            {
+                foreach (var element in words)
+                {
+                    if (sentence.Contains(element))
+                    {
+                        sentence.Remove(element);
+                    }
+                      
+                }
+            }
+                 
+        }
     }
 }

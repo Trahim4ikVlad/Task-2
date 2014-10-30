@@ -13,13 +13,15 @@ namespace Task
     {
         static void Main(string[] args)
         {
-           
-            string path = @"D:\Epam\test.txt";
+
+            string inputPath = @"D:\Epam\input.txt";
+            string outputPath = @"D:\Epam\output.txt";
+
             string data;
 
             try
             {
-                using (StreamReader sr = new StreamReader(path))
+                using (StreamReader sr = new StreamReader(inputPath))
                 {
                     data = sr.ReadToEnd();
                 }
@@ -29,50 +31,45 @@ namespace Task
                  throw new Exception("The file could not be read:", e);
             } 
 
-
             Regex regex = new Regex("\\s+");
             data = regex.Replace(data, " ");
           
+            StringBuilder sb = new StringBuilder();
+
             Text text = new Text(data);
-            /*
-            foreach (var sen in text)
-            {
-                foreach (var element in sen)
-                {
-                    Console.WriteLine(element.Value);
-                }
-            }
-            */
 
-            
-            Console.WriteLine("After sorting:");
+            sb.AppendLine("Source.........");
+            sb.Append(text.Value);
             text.OrderBySentence();
-            
+
+            sb.AppendLine();
+            sb.AppendLine("After sorting.........");
             foreach (var sen in text)
+            {  
+                sb.Append(sen.Value);
+                sb.AppendLine();
+            }
+            sb.AppendLine("Repeated words in interrogative sentences.............");
+            foreach (var t in text.InterrogativeSentenceNoRepeat(5))
             {
-                Console.WriteLine(sen.Value);
+                sb.AppendLine(t.Value);
             }
 
-            Console.WriteLine("-------------------------");
-            Console.WriteLine("In all interrogative sentences of the text to find and print without the repetition of words of a given length:");
-
-            //text.InterrogativeSentenceNoRepeat(5);
-            //text.RemoveWordBeginsWithConsonant(3);
-
-            foreach (var sen in text)
-            {
-                if (sen.Count > 10)
-                {
-                    sen.ReplaceSpecifiedSubstring(5,"Hello!!!!!");
-                }
-            }
+            sb.AppendLine("After remove..................");
+            text.RemoveWordBeginsWithConsonant(8);
 
             foreach (var sen in text)
             {
                 foreach (var w in sen)
                 {
-                    Console.Write(w.Value+" ");
+                    sb.AppendLine(w.Value + " ");
                 }
+            }
+
+            using (StreamWriter file = new System.IO.StreamWriter(outputPath, true))
+            {
+                file.Write(sb.ToString());
+                file.Close();
             }
         }
     }

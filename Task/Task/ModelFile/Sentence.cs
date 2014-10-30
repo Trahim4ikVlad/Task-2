@@ -15,19 +15,24 @@ namespace Task.ModelFile
 
         public string Value { get; set; }
 
-        private string GetValue()
+        /*private string GetValue()
         {
-            string value = "";
+           StringBuilder sb = new StringBuilder();
+
 
             foreach (ISentenceElement element in _elements)
             {
+                if (element is IWord)
+                {
+                    sb.Append(element.Value+" ");
+                }
                 value += element.Value +" ";
             }
             Regex regex = new Regex("\\s+");
 
-            value = regex.Replace(value, " ");
+            value = regex.Replace(value, "");
             return value;
-        }
+        }*/
 
 
         public Sentence(string value)
@@ -141,5 +146,13 @@ namespace Task.ModelFile
         {
             return this.GetEnumerator();
         }
+
+        public void ReplaceSubNewSubstring(Predicate<Sentence> condition, string subsrting)
+        {
+            
+
+
+        }
+
     }
 }
