@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using Task.ModelFile;
@@ -57,36 +59,46 @@ namespace Task
         }
 
         
-        public static List<ISentenceElement> InterrogativeSentenceNoRepeat(this Text text, int length)
+        public static IList<IWord> InterrogativeSentenceNoRepeat(this Text text, int length)
         {
-            
-         return    text.Where(x => x.Contains(new PunctuationMark("?"))).SelectMany(x=>x).Where(x =>
+
+         return  text.Where(x => x.Contains(new PunctuationMark("?"))).SelectMany(x => x).Where(x =>
          {
              var word = x as IWord;
              return word != null && word.Length == length;
-         }).ToList();
-                     
-            /*
-            foreach (var interrogativeSentence in interrogativeSentences)
-            {
-                interrogativeSentence.Where(x => x.Value.Length == length && x is IWord).Distinct();
-               /* 
-                foreach (ISentenceElement w in interrogative)
-                {
-                    interrogativeSentence.Remove(w);
-                    interrogativeSentence.Remove(w);
-                }*/ 
+         }).Distinct(null) as IList<IWord>;
+
         }
 
-        public static void RemoveWordBeginsWithConsonant(this Text text, int length)
+        public static List<ISentenceElement> RemoveWordBeginsWithConsonant(this Text text, int length)
         {
-            foreach (var sentence in text)
-            {
-                foreach (var element in sentence)
-                {
+            Regex consonant = new Regex("[^aeiou]");
 
+            foreach (var s in text.SelectMany(x => x).Where(x => (x is IWord) && consonant.IsMatch(x.Value[0].ToString()))
+                .ToList())
+            {
+               
+            }
+            return text.SelectMany(x => x).Where(x => (x is IWord) && consonant.IsMatch(x.Value[0].ToString()))
+                .ToList();
+        }
+
+        public static void ReplaceSpecifiedSubstring(this Sentence sentence, int length, string substring)
+        {
+            foreach (ISentenceElement element in sentence)
+            {
+                var word = element as IWord;
+                
+                if (word!=null)
+                {
+                    if (word.Length == length)
+                    {
+                        word.Value = substring;
+                    }
                 }
             }
         }
+
+        
     }
 }

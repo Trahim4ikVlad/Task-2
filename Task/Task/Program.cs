@@ -56,24 +56,24 @@ namespace Task
             Console.WriteLine("-------------------------");
             Console.WriteLine("In all interrogative sentences of the text to find and print without the repetition of words of a given length:");
 
+            //text.InterrogativeSentenceNoRepeat(5);
+            //text.RemoveWordBeginsWithConsonant(3);
 
-            foreach (var sen in text.InterrogativeSentenceNoRepeat(5))
-            {
-                Console.WriteLine(sen.Value);
-            }
-            text.InterrogativeSentenceNoRepeat(5);
-
-            /*
             foreach (var sen in text)
             {
-                foreach (var element in sen)
+                if (sen.Count > 10)
                 {
-                    Console.WriteLine(element.Value);
+                    sen.ReplaceSpecifiedSubstring(5,"Hello!!!!!");
                 }
-                   
-                
-            }*/
+            }
 
+            foreach (var sen in text)
+            {
+                foreach (var w in sen)
+                {
+                    Console.Write(w.Value+" ");
+                }
+            }
         }
     }
 }
