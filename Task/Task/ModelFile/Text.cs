@@ -11,14 +11,13 @@ namespace Task.ModelFile
 {
     public class Text:ICollection<Sentence>
     {
-        private IList<Sentence> _sentens = new List<Sentence>(); 
+        private IList<Sentence> _sentens = new List<Sentence>();
 
         public string Value { get; set; }
 
         public Text(string value)
         {
             this.Value = value;
-
             foreach (var sentence in this.GetSentenceValue())
             {
                 if(sentence.Length>0)
@@ -26,12 +25,22 @@ namespace Task.ModelFile
             }
         }
 
-        public override string ToString()
+        private string GetText()
         {
-            return Value;
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Sentence sentence in _sentens)
+            {
+                sb.Append(sentence + " ");
+            }
+            return sb.ToString();
         }
 
-        //сортировка по количеству слов в предложении
+        public override string ToString()
+        {
+            return GetText();
+        }
+
         public void OrderBySentence()
         {
            _sentens = _sentens.OrderBy(x => x.CountWords()).ToList();

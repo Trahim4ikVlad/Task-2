@@ -1,0 +1,43 @@
+﻿Source.........
+MY profession DECISION DECISION TO BECOME A LAWYER was irrevocably sealed when I realized realized my father hated the legal profession? I was a young teenager, clumsy, embarrassed by my awkwardness, frustrated with life, horrified of puberty, about to be shipped off to a military school by my father for insubordination. He was an ex- Marine who believed boys should live by the crack of the whip. Id developed a quick tongue and an aversion to discipline, and his solution was simply to send me away. It was years before I forgave him. He was also an industrial engineer who worked seventy hours a week for a company that made, among many other items, ladders. Because by their very nature ladders are dangerous devices, his company became a frequent target of lawsuits. And because he handled design, my father was the favorite choice to speak for the company in depositions and trials. I cant say that I blame him for hating lawyers, but I grew to admire them because they made his life so miserable. Hed spend eight hours haggling with them, then hit the martinis as soon as he walked in the door. No hellos. No hugs. No dinner. Just an hour or so of continuous bitching while he slugged down four martinis then passed out in his battered re- cliner. One trial lasted three weeks, and when it ended with a large verdict against the company my mother called a doctor and they hid him in a hospital for a month. 
+
+After sorting.........
+No hellos. No hugs. No dinner. It was years before I forgave him. He was an ex- Marine who believed boys should live by the crack of the whip. Because by their very nature ladders are dangerous devices, his company became a frequent target of lawsuits. Id developed a quick tongue and an aversion to discipline, and his solution was simply to send me away. Hed spend eight hours haggling with them, then hit the martinis as soon as he walked in the door. And because he handled design, my father was the favorite choice to speak for the company in depositions and trials. MY profession DECISION DECISION TO BECOME A LAWYER was irrevocably sealed when I realized realized my father hated the legal profession? He was also an industrial engineer who worked seventy hours a week for a company that made, among many other items, ladders. Just an hour or so of continuous bitching while he slugged down four martinis then passed out in his battered re- cliner. I cant say that I blame him for hating lawyers, but I grew to admire them because they made his life so miserable. I was a young teenager, clumsy, embarrassed by my awkwardness, frustrated with life, horrified of puberty, about to be shipped off to a military school by my father for insubordination. One trial lasted three weeks, and when it ended with a large verdict against the company my mother called a doctor and they hid him in a hospital for a month. 
+
+Repeated words in interrogative sentences.............
+DECISION
+realized
+
+After remove..................
+No hellos.
+No hugs.
+No dinner.
+It was years before I forgave him.
+He was an ex- Marine who believed boys should live by the crack of the whip.
+Because by their very nature ladders are dangerous devices, his company became a frequent target of lawsuits.
+Id developed a quick tongue and an aversion to, and his solution was simply to send me away.
+Hed spend eight hours haggling with them, then hit the martinis as soon as he walked in the door.
+And because he handled design, my father was the favorite choice to speak for the company in depositions and trials.
+MY DECISION DECISION TO BECOME A LAWYER was irrevocably sealed when I realized realized my father hated the legal?
+He was also an industrial engineer who worked seventy hours a week for a company that made, among many other items, ladders.
+Just an hour or so of bitching while he slugged down four martinis then passed out in his battered re- cliner.
+I cant say that I blame him for hating lawyers, but I grew to admire them because they made his life so miserable.
+I was a young teenager, clumsy, embarrassed by my awkwardness, with life, horrified of puberty, about to be shipped off to a military school by my father for insubordination.
+One trial lasted three weeks, and when it ended with a large verdict against the company my mother called a doctor and they hid him in a hospital for a month.
+
+After replace...................
+Hello World hellos.
+Hello World hugs.
+Hello World dinner.
+It was years before I forgave him.
+He was an ex- Marine who believed boys should live by the crack of the whip.
+Because by their very nature ladders are dangerous devices, his company became a frequent target of lawsuits.
+Id developed a quick tongue and an aversion to, and his solution was simply to send me away.
+Hed spend eight hours haggling with them, then hit the martinis as soon as he walked in the door.
+And because he handled design, my father was the favorite choice to speak for the company in depositions and trials.
+MY DECISION DECISION TO BECOME A LAWYER was irrevocably sealed when I realized realized my father hated the legal?
+He was also an industrial engineer who worked seventy hours a week for a company that made, among many other items, ladders.
+Just an hour or so of bitching while he slugged down four martinis then passed out in his battered re- cliner.
+I cant say that I blame him for hating lawyers, but I grew to admire them because they made his life so miserable.
+I was a young teenager, clumsy, embarrassed by my awkwardness, with life, horrified of puberty, about to be shipped off to a military school by my father for insubordination.
+One trial lasted three weeks, and when it ended with a large verdict against the company my mother called a doctor and they hid him in a hospital for a month.

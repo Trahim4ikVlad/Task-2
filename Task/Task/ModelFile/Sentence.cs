@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,26 +14,33 @@ namespace Task.ModelFile
     {
         private  IList<ISentenceElement> _elements  =  new List<ISentenceElement>();
 
-        public string Value { get; set; }
+        public string Value
+        {
+            get; set; 
+        }
 
-        /*private string GetValue()
+        private string GetValue()
         {
            StringBuilder sb = new StringBuilder();
 
-
-            foreach (ISentenceElement element in _elements)
+            for (int i = 0; i < _elements.Count; i++)
             {
-                if (element is IWord)
+                if(i == 0&&_elements[i] is IWord)
                 {
-                    sb.Append(element.Value+" ");
+                    sb.Append(_elements[i].ToString());
                 }
-                value += element.Value +" ";
+                else if (_elements[i] is IWord)
+                {
+                    sb.Append(" " + _elements[i].ToString());
+                }
+                 if (_elements[i] is IPunctuationMark)
+                {
+                    sb.Append(_elements[i].ToString());
+                }
             }
-            Regex regex = new Regex("\\s+");
 
-            value = regex.Replace(value, "");
-            return value;
-        }*/
+            return sb.ToString();
+        }
 
 
         public Sentence(string value)
@@ -43,7 +51,7 @@ namespace Task.ModelFile
 
         public override string ToString()
         {
-            return Value;
+            return GetValue();
         }
      
         public void Add(ISentenceElement item)
@@ -147,12 +155,24 @@ namespace Task.ModelFile
             return this.GetEnumerator();
         }
 
-        public void ReplaceSubNewSubstring(Predicate<Sentence> condition, string subsrting)
+        public void ReplaceNewSubstring(Func<ISentenceElement, bool> predicat, string subsrting)
         {
-            
+            IList<ISentenceElement> elements = subsrting.ParseString();
+           
+            var words = _elements.Where(predicat).ToList();
 
+            for (int i = 0; i < _elements.Count; i++)
+            {
+                if (words.Contains(_elements[i]))
+                {
+                    _elements.Remove(_elements[i]);
 
+                    for (int j = 0; j < elements.Count; j++)
+                    {
+                        _elements.Insert(i + j, elements[j]);
+                    }
+                }
+            }
         }
-
     }
 }

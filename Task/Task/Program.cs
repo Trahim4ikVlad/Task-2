@@ -14,8 +14,8 @@ namespace Task
         static void Main(string[] args)
         {
 
-            string inputPath = @"D:\Epam\input.txt";
-            string outputPath = @"D:\Epam\output.txt";
+            string inputPath = @"C:\Users\Vlad\Documents\GitHub\Task-2\Task\input.txt";
+            string outputPath = @"C:\Users\Vlad\Documents\GitHub\Task-2\Task\output.txt";
 
             string data;
 
@@ -38,33 +38,74 @@ namespace Task
 
             Text text = new Text(data);
 
+            
             sb.AppendLine("Source.........");
-            sb.Append(text.Value);
+            sb.Append(text);
+
+            //sort
             text.OrderBySentence();
+            
 
             sb.AppendLine();
+            sb.AppendLine();
+
             sb.AppendLine("After sorting.........");
-            foreach (var sen in text)
-            {  
-                sb.Append(sen.Value);
-                sb.AppendLine();
-            }
+            sb.Append(text);
+           
+            sb.AppendLine();
+            sb.AppendLine();
+         
+            
+            
             sb.AppendLine("Repeated words in interrogative sentences.............");
-            foreach (var t in text.InterrogativeSentenceNoRepeat(5))
+
+           
+            //Repeated words in interrogative sentences
+            foreach (var t in text.InterrogativeSentenceNoRepeat(8))
             {
                 sb.AppendLine(t.Value);
             }
 
-            sb.AppendLine("After remove..................");
-            text.RemoveWordBeginsWithConsonant(8);
 
+            sb.AppendLine();
+            sb.AppendLine("After remove..................");
+
+            
+            
+            //deleting the word begins with a consonant
+            text.RemoveWordBeginsWithConsonant(10);
+ 
+           
             foreach (var sen in text)
             {
-                foreach (var w in sen)
+               sb.AppendLine(sen.ToString());
+            }
+
+
+            //replacing words with a new substring
+            foreach (Sentence sentence in text)
+            {
+                if (sentence.Count < 4)
                 {
-                    sb.AppendLine(w.Value + " ");
+                    sentence.ReplaceNewSubstring((x =>
+                    {
+                        var word = x as IWord;
+                        return word != null && word.ToString() == "No";
+                    }), "Hello World");
                 }
             }
+
+
+
+            sb.AppendLine();
+            sb.AppendLine("After replace...................");
+
+
+            foreach (Sentence sentence in text)
+            {
+                sb.AppendLine(sentence.ToString());
+            }
+
 
             using (StreamWriter file = new System.IO.StreamWriter(outputPath, true))
             {
